@@ -232,3 +232,150 @@ let attackArr = characters.filter(function(x){
 });
 console.log(attackArr);
 
+  //console.log(validateKeys(objectA, expectedKeys));
+
+  //Part 2
+
+  const loaf = {flour: 300, water: 210};
+
+  //console.log(loaf.flour);
+  //console.log(loaf.water);
+  
+  loaf.hydration = () => (loaf.water / loaf.flour) * 100; 
+  
+
+  //console.log(loaf.hydration());
+
+  const objectExample = {
+    foo: 1,
+    bar: 2,
+    fum: 3,
+    quux: 4,
+    spam: 5,
+  }
+function objectLoop (object){
+  for (key in object) {
+    console.log(key + " " + object[key]);
+  }
+}
+//objectLoop(objectExample);
+
+const food = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
+}
+
+//console.log(food.meals[3]);
+
+const jobHunt = [
+  {
+    name: 'Andrew',
+    job: 'NFL Player'
+  }
+  ,{
+    name: 'Michael',
+    job: 'NBA Player'
+  }
+  ,{
+    name: 'Rich',
+    job: 'Golfer'
+  }
+  ,{
+    name: 'Jane',
+    job: 'Founder'
+  }
+]
+
+function rollCall(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i].name + ", " + arr[i].job);
+  }
+}
+
+//rollCall(jobHunt);
+
+function bossProperty(arr){
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i].job === 'Founder'){
+      console.log(`${arr[i].job} ${arr[i].name} doesn't report to anybody.`);
+    } else {
+      console.log(`${arr[i].job} ${arr[i].name} reports to Founder.`);
+    }
+  }
+}
+
+//bossProperty(jobHunt);
+
+const newCode = 'craft block argon meter bells brown croon droop';
+const testWord = 'craft';
+const cipher = {
+  'a': 2,
+  'b': 3,
+  'c': 4,
+  'd': 5,
+}
+
+function decode(word){
+  let result = '';
+  let strArr = word.split(' ');
+  let arr = [];
+for (let i = 0; i < strArr.length; i++){
+  for (let key in cipher){
+    let letter = strArr[i].charAt(0);
+    let newLetter = '';
+    if (key === letter){
+      let number = cipher[key];
+      let newLetter = (strArr[i].charAt(number -1));
+      arr.push(newLetter);
+          }
+  }
+}
+return arr.join('');
+}
+console.log(decode('craft block argon meter bells brown croon droop'));
+  console.log(decode(testWord, cipher));
+
+
+  //function decode(words) {
+   // let result = [];
+   // let newArray = words.split(' ');
+   // for (let i = 0; i < newArray.length; i++) {
+   //   if (newArray[i].charAt(0) === 'a') {
+    //    result.push(newArray[i].charAt(1));
+   //   } else if (newArray[i].charAt(0) === 'b') {
+   //     result.push(newArray[i].charAt(2));
+   //   } else if (newArray[i].charAt(0) === 'c') {
+   //     result.push(newArray[i].charAt(3));
+   //   } else if (newArray[i].charAt(0) === 'd') {
+   //     result.push(newArray[i].charAt(4));
+   //   } else {
+  //      result.push(' ');
+  //    }
+  //  }
+  //  return result.join('');
+  //}
+
+  const cipher = {
+    a: 2,
+    b: 3,
+    c: 4,
+    d: 5
+  };
+  
+  function decode(word){
+      let result = '';
+      let strArr = word.split(' ');
+      let arr = [];
+    for (let i = 0; i < strArr.length; i++){
+      for (let key in cipher){
+        let letter = strArr[i].charAt(0);
+        let newLetter = '';
+        if (key === letter){
+          let number = cipher[key];
+          let newLetter = (strArr[i].charAt(number -1));
+          arr.push(newLetter);
+              }
+      }
+    }
+    return arr.join('');
+  }
+  //console.log(decode('craft block argon meter bells brown croon droop'));
