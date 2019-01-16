@@ -158,3 +158,5 @@ const objectA = {
   }
 
   console.log(validateKeys(objectA, expectedKeys));
+
+  //Part 2
