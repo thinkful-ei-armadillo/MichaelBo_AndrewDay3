@@ -144,17 +144,19 @@ const objectA = {
   
   function validateKeys(object, expectedKeys) {
     let arrayOfKeys = Object.keys(object);
-    
-        if (Object.keys(object).length !== expectedKeys.length){
-            return false;
+      for (let i = 0; i < arrayOfKeys.length; i++){
+        if (arrayOfKeys.length !== expectedKeys.length){
+          return false;
         }
-        else if (arrayOfKeys !== expectedKeys){
-            return false;
+
+        if (arrayOfKeys[i] !== expectedKeys[i]){
+          return false;
         }
+
         else {
-            return true;
+          return true;
         }
-    
+      }
   }
 
   console.log(validateKeys(objectA, expectedKeys));
